@@ -26,7 +26,7 @@ func main() {
 		*url = strings.ReplaceAll(*url, "localhost", *localhost)
 	}
 	for {
-		res, err := http.Head(*url)
+		res, err := http.Get(*url)
 		if err == nil && res.StatusCode == *responseCode {
 			fmt.Printf("Response header: %v", res)
 			os.Exit(0)
